@@ -61,4 +61,3 @@ public:
 	virtual			SensorValue		averagePower();
 };
 
-#endif /* _POWERMAC8_1_CPUFANCTRLLOOP_H */

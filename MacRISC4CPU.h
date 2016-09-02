@@ -101,6 +101,7 @@ private:
     const OSSymbol 		*i2c_openI2CBus;
     const OSSymbol 		*i2c_closeI2CBus;
     const OSSymbol 		*i2c_setCombinedMode;
+	const OSSymbol 		*i2c_setStandardSubMode;
     const OSSymbol 		*i2c_readI2CBus;
     const OSSymbol 		*i2c_writeI2CBus;
     const OSSymbol 		*u3APIPhyDisableProcessor1;

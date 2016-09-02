@@ -206,4 +206,3 @@ public:
 	// Control Rubberbanding:
 	virtual	ControlValue			rubberBanding(ControlValue newTarget);
 };
-#endif /* _PM12_1VIRTUALCONTROL_H */

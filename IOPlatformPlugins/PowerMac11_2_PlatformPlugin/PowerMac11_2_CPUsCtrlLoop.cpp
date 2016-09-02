@@ -63,6 +63,7 @@
 	Interval should be 1s, assuming sensors can be read fast enough.
 */
 
+// Note that the coefficients (Gp, Gr, Gd) are placeholders and are most-likely wrong for Q63.
 UInt8 gCore0AlternateDataOnlyForTesting[ 24 ] = {
 0xC8, 0x06, 0x02, 0x7F, 0xFF, 0x02, 0xFF, 0x06, 0xFC, 0x66, 0x00, 0x5f,
 0x00, 0xA0, 0x00, 0x00, 0x00, 0x08, 0xCC, 0xCD, 0x09, 0x60, 0x00, 0x00
@@ -1501,6 +1502,7 @@ void PowerMac11_2_CPUsCtrlLoop::sendNewTarget( ControlValue newTarget )
 					( getCtrlLoopID() ? getCtrlLoopID()->unsigned16BitValue() : 0xFF ), this, newTarget, mLastCalculatedDelta.sensValue >> 16);
 					
 		mGroupControl->setTargetValue( newTarget, this, ( mLastCalculatedDelta.sensValue * 10 ) >> 16 );  // <- uncomment this to allow a comparison based on Delta T (as Paul Thompson Wished for Q77)
+		//mGroupControl->setTargetValue( newTarget, this, newTarget );  // <- uncomment this to allow a comparison based on Fan speed (as Paul Thompson asked for the first version of Q63)
 		
 		// ensures that from now on a new target will be calculated.
 		ctrlloopState = kIOPCtrlLoopAllRegistered;
